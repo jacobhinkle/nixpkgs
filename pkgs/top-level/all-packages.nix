@@ -1878,6 +1878,8 @@ let
   sg3_utils = callPackage ../tools/system/sg3_utils { };
 
   sharutils = callPackage ../tools/archivers/sharutils { };
+  
+  shotwell = callPackage ../applications/graphics/shotwell { };
 
   shebangfix = callPackage ../tools/misc/shebangfix { };
 
@@ -6115,10 +6117,10 @@ let
     python = python33;
   });
 
-  python34Packages = import ./python-packages.nix {
+  python34Packages = recurseIntoAttrs (import ./python-packages.nix {
     inherit pkgs;
     python = python34;
-  };
+  });
 
   python32Packages = import ./python-packages.nix {
     inherit pkgs;
@@ -7094,9 +7096,11 @@ let
 
   prayer = callPackage ../servers/prayer { };
 
-  procps = callPackage ../os-specific/linux/procps { };
+  procps = procps-ng;
 
-  "procps-ng" = callPackage ../os-specific/linux/procps-ng { };
+  procps-old = lowPrio (callPackage ../os-specific/linux/procps { });
+
+  procps-ng = callPackage ../os-specific/linux/procps-ng { };
 
   qemu_kvm = lowPrio (qemu.override { x86Only = true; });
 

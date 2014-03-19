@@ -758,6 +758,10 @@ let result = let callPackage = x : y : modifyPrio (newScope result.finalReturn x
 
   checkers = callPackage ../development/libraries/haskell/checkers {};
 
+  chell = callPackage ../development/libraries/haskell/chell {};
+
+  chellQuickcheck = callPackage ../development/libraries/haskell/chell-quickcheck {};
+
   chunkedData = callPackage ../development/libraries/haskell/chunked-data {};
 
   citeprocHs = callPackage ../development/libraries/haskell/citeproc-hs {};
@@ -999,6 +1003,8 @@ let result = let callPackage = x : y : modifyPrio (newScope result.finalReturn x
   DRBG = callPackage ../development/libraries/haskell/DRBG {};
 
   DSH = callPackage ../development/libraries/haskell/DSH {};
+
+  dsp = callPackage ../development/libraries/haskell/dsp {};
 
   dstring = callPackage ../development/libraries/haskell/dstring {};
 
@@ -1856,6 +1862,8 @@ let result = let callPackage = x : y : modifyPrio (newScope result.finalReturn x
   opensslStreams = callPackage ../development/libraries/haskell/openssl-streams {};
 
   operational = callPackage ../development/libraries/haskell/operational {};
+
+  options = callPackage ../development/libraries/haskell/options {};
 
   optparseApplicative = callPackage ../development/libraries/haskell/optparse-applicative {};
 
